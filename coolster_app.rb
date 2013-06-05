@@ -40,6 +40,7 @@ class CoolsterApp < Sinatra::Base
   # Author: Amina Zoheir
   aget '/poll' do
     puts "polling"
+    puts request.cookies
     puts env['warden'].authenticated?
     if env['warden'].authenticated?
       puts @@saved_scripts[request.session.id]
